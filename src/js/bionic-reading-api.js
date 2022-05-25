@@ -1,5 +1,3 @@
-import { handleAPIResponse } from "./utility.js";
-
 /**
  * Send a post request to RapidAPI convert endpoint:
  * https://bionic-reading1.p.rapidapi.com/convert
