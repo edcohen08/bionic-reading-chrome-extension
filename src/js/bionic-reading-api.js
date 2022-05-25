@@ -81,6 +81,15 @@ const readLocalStorage = async (key) => {
 };
 
 /**
+ * Handles the API response. Checks for errors or returns the text
+ * @param {Object} response
+ */
+function handleAPIResponse(res) {
+  const text = res.text();
+  return res.ok ? text : Promise.reject(text);
+}
+
+/**
  * On page load, request for Bionic Reading of content stored.
  */
 if (document.title == "Converted Bionic Text") {
