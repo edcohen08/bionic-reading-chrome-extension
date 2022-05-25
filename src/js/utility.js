@@ -17,7 +17,7 @@ const inputApiKey = document.getElementById("apiKey");
  * Handles the API response. Checks for errors or returns the text
  * @param {Object} response
  */
-function handleAPIResponse(res) {
+export function handleAPIResponse(res) {
   const text = res.text();
   return res.ok ? text : Promise.reject(text);
 }
