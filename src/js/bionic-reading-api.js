@@ -37,14 +37,14 @@ async function requestBionic(
 
   if (isWebpageConvert == false) {
     fetch("https://bionic-reading1.p.rapidapi.com/convert", options)
-      .then((response) => handleAPIReponse(response))
+      .then((response) => handleAPIResponse(response))
       .then((response) => {
         document.getElementById("bionic-response").innerHTML = response;
       })
       .catch((err) => alert(err));
   } else if (isWebpageConvert == true) {
     return fetch("https://bionic-reading1.p.rapidapi.com/convert", options)
-      .then((response) => handleAPIReponse(response))
+      .then((response) => handleAPIResponse(response))
       .then((response) => response)
       .catch((err) => alert(err));
   }
