@@ -11,7 +11,13 @@
  * @param {String} saccade
  * @param {Boolean} isWebpageConvert
  */
-async function requestBionic(apiKey, content, fixation, saccade, isWebpageConvert) {
+async function requestBionic(
+  apiKey,
+  content,
+  fixation,
+  saccade,
+  isWebpageConvert
+) {
   const encodedParams = new URLSearchParams();
   encodedParams.append("content", content);
   encodedParams.append("response_type", "html");
@@ -31,14 +37,14 @@ async function requestBionic(apiKey, content, fixation, saccade, isWebpageConver
 
   if (isWebpageConvert == false) {
     fetch("https://bionic-reading1.p.rapidapi.com/convert", options)
-      .then((response) => response.text())
+      .then((response) => handleAPIReponse(response))
       .then((response) => {
         document.getElementById("bionic-response").innerHTML = response;
       })
       .catch((err) => alert(err));
   } else if (isWebpageConvert == true) {
     return fetch("https://bionic-reading1.p.rapidapi.com/convert", options)
-      .then((response) => response.text())
+      .then((response) => handleAPIReponse(response))
       .then((response) => response)
       .catch((err) => alert(err));
   }

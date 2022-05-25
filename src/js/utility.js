@@ -14,6 +14,15 @@ let inputSaccade;
 const inputApiKey = document.getElementById("apiKey");
 
 /**
+ * Handles the API response. Checks for errors or returns the text
+ * @param {Object} response
+ */
+function handleAPIReponse(res) {
+  const text = res.text();
+  return res.ok ? text : Promise.reject(text);
+}
+
+/**
  * sets the colour of the button by the id of the button
  * @param {String} value
  * @param {String} colour
